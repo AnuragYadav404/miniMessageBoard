@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    form(action="/new", method="POST")
+        label(for="name") Name:
+        input(type="text", name="name", id="name", required)
+        
+        label(for="message") Message:
+        textarea(name="message", id="message", rows="4", required)
+        
+        button(type="submit") Submit

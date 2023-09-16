@@ -25,4 +25,18 @@ router.get("/", function (req, res, next) {
   res.render("index", { messageArray: messages });
 });
 
+router.get("/new", function (req, res, next) {
+  res.render("newMessage");
+});
+
+router.post("/new", function (req, res, next) {
+  let newMsg = {
+    user: req.body.name,
+    text: req.body.message,
+    added: new Date(),
+  };
+  messages.push(newMsg);
+  res.redirect("/");
+});
+
 module.exports = router;
