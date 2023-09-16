@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //index and user routers are set up
 // only using /(index->view messages) and /new (form to create new messages)
 app.use("/", indexRouter);
-// app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

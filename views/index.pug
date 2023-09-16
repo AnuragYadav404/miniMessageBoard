@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Message Board
+  .Messages   
+    ul
+      each message in messageArray
+        li 
+          .message 
+            p 
+              b #{message.user} says: #{message.text} at: #{message.added}
+            

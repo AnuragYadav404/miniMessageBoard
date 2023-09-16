@@ -1,6 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
+const messages = [
+  {
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date(),
+  },
+  {
+    text: "Hey!!",
+    user: "Charles",
+    added: new Date(),
+  },
+];
+
 /* GET home page. */
 // here we have to define the following:
 /*
@@ -9,7 +22,7 @@ const router = express.Router();
   3. post for "/new" this posts the message data to server and redirects the request to "/"
 */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { messageArray: messages });
 });
 
 module.exports = router;
